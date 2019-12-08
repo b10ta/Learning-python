@@ -80,25 +80,3 @@ while not(win(board)):
     #             s += 1
     #     if s == 3:
     #         return init
-
-# still doing it
-# not finished
-# sorry :'(
-# one min
-# nice
-
-
-# uhhh i am used to JS
-
-# yeah yeah no semicolons
-# wait there is no score on TicTac
-
-# hmm... what is winning
-# it's getting a full row of X
-# or a full row of Y
-
-# we cant on python???!!
-# hmmm ok
-# is there do-while in python?
-# ok no simicolons ; hehe
-# hehe lol not used to python
