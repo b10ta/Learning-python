@@ -3,7 +3,6 @@ from datetime import date
 import pprint
 import time
 
-# hi this is a test
 
 def topics_number(x):
     size = len(x)
