@@ -36,8 +36,8 @@ def compute():
     return randint(1, 9)
 
 players = [
-    {'name': 'computer', 'sign': 'x', 'choose': compute},
-    {'name': name, 'sign': 'o', 'choose': input},
+    {'name': name, 'sign': 'X', 'choose': input},
+    {'name': 'computer', 'sign': 'O', 'choose': compute},
 ]
 
 # who's gonna win
@@ -48,8 +48,11 @@ def win(board):
 def turnof(player):
     def showBoard(board):
         print('')
-        for row in board:
-            row = map(lambda x: '#'if x == None else x, row)
+        for rid,row in enumerate(board):
+            row = [
+                (str(3*rid+iid+1) if item == None else item)
+                for iid, item in enumerate(row)
+                ]
             print('  | '+'  '.join(row)+' |')
             print('')
     system('clear')
@@ -66,7 +69,7 @@ whoPlay = 0
 while not(win(board)):
     # toggle turns
     whoPlay = int(not(whoPlay))
-    turnof(whoPlay)
+    turnof(players[whoPlay])
 
     # for row in board:
     #     s = 0
