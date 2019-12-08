@@ -3,6 +3,7 @@ from datetime import date
 import pprint
 import time
 
+## this Project is just for learning Python *_*
 
 def topics_number(x):
     size = len(x)
@@ -17,15 +18,15 @@ def goodBye():
 
 
 os.system('clear')
-print("Today's date:", date.today())
-print('welcome to this small Bot project')
-print('Hello! , What should we call you \'_\' >>')
+print(" Today's date: ", date.today())
+print(' Welcome to this small Bot project ')
+print(' Hello! , What should we call you \'_\' >>' )
 name = input()
 topics = ['Sport', 'Movies', 'Programming']
 if name.isalpha():
     print('Nice to meet you  ' + name)
     time.sleep(2)
-    print("WHich topic do you like to talk about \n this our List : ")
+    print(" WHich topic do you like to talk about \n this our List : ")
     time.sleep(2)
     print(topics_number(topics))
     time.sleep(3)
@@ -61,7 +62,7 @@ if name.isalpha():
                         goodBye()
                     if country_choise == 3:
                         print(
-                            'if you dont live in France it must Be Paris Saint-Germain')
+                            ' if you dont live in France it must Be Paris Saint-Germain ')
                         time.sleep(2)
                         goodBye()
                     if country_choise == 4:
@@ -74,25 +75,26 @@ if name.isalpha():
                         time.sleep(2)
                         goodBye()
                 else:
-                    print(' I knew it im bad at reading peopel mind')
+                    print(' I knew it im bad at reading peopel mind ')
                     time.sleep(2)
                     goodBye()
             elif number.isdecimal and number == '2':
-                print('One of my Favor Topics *_* \ntell me about ur favorite Movies')
+                print(' One of my Favor Topics *_* \ntell me about ur favorite Movies ')
                 Movies_List = []
                 Movies_List = input()
-                bot_List = ['Mr.Robot', 'Wohami', 'Inception', 'Joker', ]
-                print('intersting List i will watch it once >>>' + Movies_List)
+                bot_List = ['Mr.Robot', 'Wohami', 
+                            'Inception', 'Joker', ]
+                print(' intersting List i will watch it once >>> ' + Movies_List)
                 time.sleep(2)
-                print('Maybe you can Look at my Movies List')
+                print(' Maybe you can Look at my Movies List ')
                 time.sleep(2)
                 print(','.join(bot_List))
             elif number.isdecimal and number == '3':
                 print(
-                    'Programming ..................... Yepppp \n tell me about your favorite Language')
+                    ' Programming ..................... Yepppp \n tell me about your favorite Language ')
                 programming = str(input())
                 time.sleep(1)
-                if programming.lower() == 'python ':
+                if programming.lower() == 'python':
                     print('wow my favorite also')
                     time.sleep(2)
                     goodBye()
@@ -100,7 +102,7 @@ if name.isalpha():
                     print('i didnt expect ' + programming +
                           ' is your favorite languge')
             else:
-                print('Enter a number next time ')
+                print(' Enter a number next time ')
 
 else:
-    print("Please enter Letters ")
+    print(" Please enter Letters ")
