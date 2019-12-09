@@ -8,7 +8,7 @@ print('Welcome to our simple tictactoe implementation\n' +
       '[Player name/No]: ', end='')
 
 # read user reply
-isRight = name = None
+name = None
 while len(name:= input()) < 2:
     print('this is an invalid response, plz try again')
 
