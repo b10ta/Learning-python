@@ -3,14 +3,13 @@ from time import sleep
 from random import randint
 
 # welcome message
-print('Welcome to our simple tictactoe implementation\n' +
-      'would you like to play ?\n' +
-      '[Player name/No]: ', end='')
+print('Welcome to our simple Tic-Tac-Toe game\n' +
+      'would you like to play ?\n', end='')
 
 # read user reply
-name = None
-while len(name:= input()) < 2:
-    print('this is an invalid response, plz try again')
+name = input('[Player name/No]: ')
+while len(name) < 2:
+    name=input('invalid username, plz try again: ')
 
 # if he dont want to to play then Bye Bye
 if name.lower() in {'no', 'nope'}:
@@ -18,15 +17,23 @@ if name.lower() in {'no', 'nope'}:
     exit()
 
 # ok he wanna play lets define the board
-board = [[None for i in range(3)] for j in range(3)]
+board = [
+    [
+        None
+        for i in range(3)
+    ]
+    for j in range(3)
+]
+
 def playAt(x,y,player):
     if(board[x][y] == None):
         board[x][y] = player['sign']
-        print('"%s" marked an "%s" at (X:%d, Y:%d)'
+        print('"%s" played "%s" at (X:%d, Y:%d)'
         % (player['name'], player['sign'], x+1,y+1) )
-
+        sleep(3)
     else:
-        print('sorry this is already marked')
+        print('this one is already played')
+        sleep(3)
         turnof(player)
 
 # define players and their decisions
