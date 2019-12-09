@@ -3,16 +3,16 @@ from time import sleep
 from random import randint
 
 # welcome message
-print('Welcome to our simple Tic-Tac-Toe game\n' +
+print('Welcome to our simple Tic-Tac-Toe game\n',
       'would you like to play ?')
 
 # read user reply
 name = input('[Player name/No]: ')
-while len(name) < 2:
+while len(name) < 1:
     name=input('invalid username, plz try again: ')
 
 # if he dont want to to play then Bye Bye
-if name.lower() in {'no', 'nope'}:
+if name.lower() in {'n', 'no', 'nope'}:
     print('bye bye, have a nice day :)')
     exit()
 
