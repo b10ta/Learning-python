@@ -68,8 +68,8 @@ whoPlay = 0
 
 while not(win(board)):
     # toggle turns
-    whoPlay = int(not(whoPlay))
     turnof(players[whoPlay])
+    whoPlay = int(not(whoPlay))
 
     # for row in board:
     #     s = 0
