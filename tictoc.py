@@ -4,7 +4,7 @@ from random import randint
 
 # welcome message
 print('Welcome to our simple Tic-Tac-Toe game\n' +
-      'would you like to play ?\n', end='')
+      'would you like to play ?\n')
 
 # read user reply
 name = input('[Player name/No]: ')
