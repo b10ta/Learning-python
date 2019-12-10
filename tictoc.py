@@ -2,44 +2,51 @@ from os import system
 from time import sleep
 from random import randint
 
-# welcome message
-print('Welcome to our simple Tic-Tac-Toe game\n',
-      'would you like to play ?')
+# say welcome to the player
+print('Welcome to our simple Tic-Tac-Toe game\n would you like to play ?')
 
-# read user reply
+# the player take a decision to play or exit
 name = input('[Player name/No]: ')
 while len(name) < 1:
     name=input('invalid username, plz try again: ')
 
-# if he dont want to to play then Bye Bye
+# exist if player dont like to play
 if name.lower() in {'n', 'no', 'nope'}:
     print('bye bye, have a nice day :)')
     exit()
 
-# ok he wanna play lets define the board
-board = [
-    [
-        None
-        for i in range(3)
-    ]
-    for j in range(3)
-]
+# if he wanna play, lets define the UI
+def UiRender(ui): # render means draw
+    system('clear')
+    UI.update(ui)
+    print('\n - %s\n\n' % UI['header'])
+    for row in UI['board']:
+        print('    [%s]    \n'%']  ['.join(row))
+    print('\n%s' % UI['footer'], end='')
+    
+UI = { # the UI is what will the user see
+	'header':'', 
+	'board': [[str(3*y+x+1) for x in range(3)] for y in range(3)],
+	'footer': '',
+	'render': UiRender
+}
 
+# lets define how to fill the board
 def playAt(x,y,player):
-    if(board[x][y] == None):
-        board[x][y] = player['sign']
-        print('"%s" played "%s" at (X:%d, Y:%d)'
-        % (player['name'], player['sign'], x+1,y+1) )
-        sleep(3)
-    else:
-        print('this one is already played')
-        sleep(3)
+    if(UI['board'][x][y].lower() in {'x', 'y'}):
+        UI['render']({'header':'this one is already played!'})
+        sleep(.6)
         turnof(player)
+        return
+    UI['board'][x][y] = player['sign']
+    UI['render']({'header':'"%s" played "%s" at (X:%d, Y:%d)'%(player['name'], player['sign'], x+1,y+1)})
+    sleep(1.2)
+
 
 # define players and their decisions
 def compute(): # play readin randomly
     print('thinking...')
-    sleep(3)
+    sleep(2.7)
     return randint(1, 9)
 
 players = [
@@ -47,36 +54,24 @@ players = [
     {'name': 'computer', 'sign': 'O', 'choose': compute},
 ]
 
-# who's gonna win
-def win(board): #TODO: dtermine the winner
+# determine who's the winner, if there is any
+def win(boardUi): #TODO: dtermine the winner
     return False
 
-# start players turns
+# start the turn of a certain player
 def turnof(player):
-    def showBoard(board):
-        print('')
-        for rid,row in enumerate(board):
-            row = [
-                (str(3*rid+iid+1) if item == None else item)
-                for iid, item in enumerate(row)
-                ]
-            print('  | '+'  '.join(row)+' |')
-            print('')
-    system('clear')
-    print('\n"%s" its your turn, plz choosea a decsion: ' % player['name'])
-    showBoard(board)
-    print(' < ', end='')
-    colId = int(player['choose']())-1
-    x = colId//3
-    y = colId % 3
+    UI['render']({'header':'"%s" its your turn, plz choosea a decsion: ' % player['name'], 'footer':' < '})
+    id = int(player['choose']())-1
+    x, y = id // 3, id % 3
     playAt(x, y, player)
 
 whoPlay = 0
-
-while not(win(board)):
+while not(win(UI['board'])):
     # toggle turns
     turnof(players[whoPlay])
     whoPlay = int(not(whoPlay))
+    
+
 
     # for row in board:
     #     s = 0
