@@ -12,7 +12,7 @@ def find_regex():
         if files.endswith(".txt"):
             text = open(files , 'r' , encoding = 'UTF-8')
             contents = text.read()
-            matches  = re.findall(regex_user , contents)
+            matches  = findall(regex_user , contents)
             if len(contents) > 0:
                 print('%s was found  on "%s"' % (matches , files ) )
             else:
