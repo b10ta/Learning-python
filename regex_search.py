@@ -1,5 +1,5 @@
 from re import findall
-from os import system
+from os import system , listdir , getcwd 
 
 regex_user = input('Enter a regular expression you would  ')
 
