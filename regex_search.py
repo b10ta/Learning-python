@@ -16,7 +16,7 @@ def find_regex():
             if len(contents) > 0:
                 print('%s was found  on "%s"' % (matches , files ) )
             else:
-                ('no result was found in this Directory ')
+                print('no result was found in this Directory ')
 
 
 print(find_regex())
