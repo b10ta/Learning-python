@@ -1,7 +1,7 @@
 from re import findall
 from os import system , listdir , getcwd 
 
-regex_user = input('Enter a regular expression you would  ')
+regex_user = input('Enter a regular expression you would:  ')
 
 print('Working Directory is %s ' % getcwd())
 
