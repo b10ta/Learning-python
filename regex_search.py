@@ -2,8 +2,6 @@ from re import findall
 
 regex_user = input('Enter a regular expression you would  ')
 
-os.system('clear')
-
 print('Working Directory is %s ' % os.getcwd())
 
 for files in os.listdir('./'):
