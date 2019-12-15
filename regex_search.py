@@ -5,10 +5,10 @@ files = listdir(getcwd())
 if len(files) == 0:
     print('no files was found in this Directory ')
     exit()
-
+    
 regex_user = input('Enter a regular expression you would:  ')
 
-found = False # u will see why
+found = False
 for file in files:
     if file.endswith(".txt"):
         text = open(file, 'r', encoding='UTF-8')
