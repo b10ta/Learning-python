@@ -3,9 +3,9 @@ from os import system , listdir , getcwd
 
 regex_user = input('Enter a regular expression you would  ')
 
-print('Working Directory is %s ' % os.getcwd())
+print('Working Directory is %s ' % getcwd())
 
-for files in os.listdir('./'):
+for files in listdir('./'):
    if files.endswith(".txt"):
       text = open(files , 'r' , encoding = 'UTF-8')
       contents = text.read()
