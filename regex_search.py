@@ -1,5 +1,4 @@
 from re import findall
-import os
 
 regex_user = input('Enter a regular expression you would  ')
 
