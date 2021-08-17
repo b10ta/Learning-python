@@ -21,4 +21,3 @@ if not(found):
     print('no results was found for \'%s\''%regex_user)
 
 
-    print ( ' no result ')
